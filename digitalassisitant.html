@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olie's Digital Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!-- SROLL ANIMATIONS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <style>
+        section{
+            padding: 60px 0;
+        }
+        .btn {
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .offcanvas-backdrop.show {
+      animation: offcanvasBackdropFadeIn 0.5s ease-out;
+    }
+    
+    
+    @keyframes offcanvasBackdropFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+    .offcanvas.show .offcanvas-body {
+      animation: offcanvasContentSlideIn 0.5s ease-out;
+    }
+    
+    @keyframes offcanvasContentSlideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .modal.show .modal-dialog {
+      animation: modalRotate 0.5s ease-out;
+    }
+    
+    @keyframes modalRotate {
+      0% {
+        transform: rotateY(-90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateY(0deg);
+        opacity: 1;
+      }
+    }
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: green; /* Change the color as desired */
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover::before {
+      transform: scaleX(1);
+    }
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      transform: scale(1.1);
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fw-bold bg-dark sticky-nav">
+        <div class="container xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-success dispaly-2">
+                    <i class="bi bi-robot"></i>
+                    Olie's Digital Assistant
+                </span>
+            </a>
+            <!-- Nav toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">FEATURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reviews" class="nav-link">REVIEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="display-2 text-dark fw-bold">Intelligent Assistance</div>
+                        <div class="display-5 text-success">with Olie's Digital Assistant</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">
+                        "Streamline your daily tasks and unlock a world of convenience with our cutting-edge digital assistant. Powered by advanced AI technology, Olie's Digital Assistant is your personal helper, ready to assist you with a wide range of tasks."
+                    </p>
+                    <a href="#pricing" class="btn btn-outline-dark btn-lg">EXPLORE PLANS</a>
+                    <button class="btn btn-outline-dark btn-lg ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">View Other Products</button>
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <img class="img-fluid" data-aos="fade-up" data-aos-duration="1000"  src="1.png" alt="Digital Assistant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+   <!-- Offcanvas Content -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-success" id="offcanvasExampleLabel"> Olie's Digital Assistant</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="dropdown">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Other Products
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="tt" data-bs-placement="bottom" title="Experience crystal-clear sound with wireless headphones and earbuds.">
+                <li><a class="dropdown-item text-success" href="virtual-glasses.html">Echo-Glasses</a></li>
+                </span>
+                <span class="tt" data-bs-placement="bottom" title="Keep your home safe and secure with advanced security solutions.">
+                <li><a class="dropdown-item text-success" href="smart-security.html">Smart Home Security Systems</a></li>
+                 </span>
+                 <span class="tt" data-bs-placement="bottom" title="Get assistance at your fingertips with AI-powered digital assistant devices.">
+                <li><a class="dropdown-item text-success" href="digitalassisitant.html">Digital Assistants</a></li>
+                </span>
+                <!-- Add more products as needed -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Pricing Section -->
+<section id="pricing" class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Choose Your Plan</h2>
+                <p class="lead text-success" data-aos="fade-up" data-aos-duration="1000">Find the perfect plan to suit your needs and budget.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Basic</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">For personal use</h6>
+                        <p class="card-text text-center display-4 fw-bold text-success">Free</p>
+                        <p class="card-text">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Voice Commands</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Basic Scheduling</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Limited Information Retrieval</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2"></i>Advanced Features</li>
+                            </ul>
+                        </p>
+                        <a href="#" class="btn btn-outline-success w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Premium</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">For home and business</h6>
+                        <p class="card-text text-center display-4 fw-bold text-success">$9.99/month</p>
+                        <p class="card-text">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Voice Commands</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced Scheduling</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Unlimited Information Retrieval</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Integration with Smart Home Devices</li>
+                            </ul>
+                        </p>
+                        <a href="#" class="btn btn-outline-success w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Advanced AI-Powered Capabilities</h2>
+                <p class="lead text-success">Olie's Digital Assistant is packed with cutting-edge features to make your life easier and more efficient.</p>
+            </div>
+        </div>
+        <div class="row my-5"> 
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="bi bi-mic-fill text-success display-5"></i>
+                    </div>
+                    <div>
+                        <h5>Voice Control</h5>
+                        <p class="text-muted">Control your digital assistant with natural voice commands, making it easy to multitask and get things done hands-free.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="bi bi-calendar-event-fill text-success display-5"></i>
+                    </div>
+                    <div>
+                        <h5>Smart Scheduling</h5>
+                        <p class="text-muted">Stay organized and on top of your schedule with our digital assistant's ability to set reminders, manage calendars, and schedule appointments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="bi bi-search text-success display-5"></i>
+                    </div>
+                    <div>
+                        <h5>Information Retrieval</h5>
+                        <p class="text-muted">Get instant access to a wealth of information with our digital assistant's powerful search capabilities, allowing you to find answers to your questions quickly and easily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews" class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">What Our Users Say</h2>
+                <p class="lead text-success">Read what our satisfied users have to say about Olie's Digital Assistant.</p>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-md-12">
+                <ul class="list-unstyled">
+                    <li class="media">
+                        <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Customer Photo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Emily Johnson</h5>
+                            <p class="text-muted mb-0">Working Professional</p>
+                            <p class="text-muted">"Olie's Digital Assistant has been a game-changer for my productivity. The voice commands and scheduling features help me stay organized and focused throughout the day."</p>
+                        </div>
+                    </li>
+                    <li class="media my-4">
+                        <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Customer Photo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Michael Thompson</h5>
+                            <p class="text-muted mb-0">Student</p>
+                            <p class="text-muted">"As a student, Olie's Digital Assistant has been an invaluable resource for research and information retrieval. It saves me so much time and effort."</p>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <img src="https://via.placeholder.com/50" class="mr-3 rounded-circle" alt="Customer Photo">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1">Sarah Wilson</h5>
+                            <p class="text-muted mb-0">Homemaker</p>
+                            <p class="text-muted">"I love how seamlessly Olie's Digital Assistant integrates with my smart home devices. It's made managing my home so much more convenient and efficient."</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Get in Touch</h2>
+                <p class="lead text-success">Have questions or want to learn more? Contact us today.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-6">
+                <form id="contactForm">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="e.g. olie@example.com" required>
+                        <!-- tooltip -->
+                        <span class="input-group-text">
+                            <span class="tt" data-bs-placement="bottom" title="Enter an email we can reply to">
+                                <i class="bi bi-question-circle-fill"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <label for="name" class="form-label">Name:</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Olie" required>
+                    </div>
+
+                    <label for="subject" class="form-label">What is your question about?</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="bi bi-chat-right-text-fill"></i></span>
+                        <select id="subject" name="subject" class="form-select" required>
+                            <option value="voice-commands">Voice Commands</option>
+                            <option value="integration">Integration</option>
+                            <option value="feature-requests">Feature Requests</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-floating mb-4 mt-5">
+                        <textarea id="query" name="query" class="form-control" style="height: 140px;" required></textarea>
+                        <label for="query">Your Query.....</label>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="submit" class="btn btn-success w-50">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+   
+
+<script>
+     const tooltips=document.querySelectorAll('.tt');
+     tooltips.forEach(t=>{
+         new bootstrap.Tooltip(t)
+     })
+// for scroll Animation
+     AOS.init();
+ </script>
+ 
+</body>
+</html>
+

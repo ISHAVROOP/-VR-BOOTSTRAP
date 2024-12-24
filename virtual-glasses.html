@@ -1,0 +1,557 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!-- SROLL ANIMATIONS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+    <title>Olie's Virtual Vibes</title>
+    
+<style>
+    section{
+        padding: 60px 0;
+    }
+    .btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.offcanvas-backdrop.show {
+  animation: offcanvasBackdropFadeIn 0.5s ease-out;
+}
+
+
+@keyframes offcanvasBackdropFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.offcanvas.show .offcanvas-body {
+  animation: offcanvasContentSlideIn 0.5s ease-out;
+}
+
+@keyframes offcanvasContentSlideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.modal.show .modal-dialog {
+  animation: modalRotate 0.5s ease-out;
+}
+
+@keyframes modalRotate {
+  0% {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green; /* Change the color as desired */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+}
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+/* Accordion button colors */
+.accordion-button {
+  color: white; /* Change the text color */
+  background-color: #067143; /* Change the background color */
+  border-color: #e9ecef; /* Change the border color */
+
+}
+
+/* Accordion button hover colors */
+.accordion-button:hover {
+    color: white; /* Change the text color */
+  background-color: #067143; /* Change the background color */
+  border-color: #e9ecef; /* Change the border color */
+
+}
+
+/* Accordion button active colors */
+.accordion-button:not(.collapsed) {
+    color: white; /* Change the text color */
+  background-color: #067143; /* Change the background color */
+  border-color: #e9ecef; /* Change the border color */
+
+}
+
+/* Accordion body colors */
+.accordion-body {
+  color: #333; /* Change the text color */
+  background-color: #f8f9fa; /* Change the background color */
+  border-color: #e9ecef; /* Change the border color */
+}
+.bi-star-fill {
+  color: #ff6600;
+}
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fw-bold bg-dark sticky-nav ">
+
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-success dispaly-2 ">
+                    <i class="bi bi-arrow-through-heart-fill"></i>
+                    Olie's Virtual Vibes
+                </span>
+            </a>
+    
+
+            <!-- nav-toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#topics" class="nav-link">ABOUT THE GLASSES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reviews" class="nav-link">REVIEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">GET IN TOUCH</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="#pricing" class="nav-link">PRINCING</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="#pricing" class="btn btn-outline-light">BUY NOW</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="class display-2 text-dark fw-bold">Echo-Glasses</div>
+
+                        <div class="class display-5 text-success">BY-OLIE</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">
+                        "Welcome to the virtual glass experience, where dreams flow and conversations ignite in the transparent prism of indulgence, raising toasts to endless possibilities distilled within its ethereal form."
+                    </p>
+                    <a href="#pricing" class="btn btn-outline-dark btn-lg">BUY NOW</a>
+                    <button class="btn btn-outline-dark btn-lg ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">View Other Products</button>
+
+
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <span class="tt" data-bs-placement="bottom" title="Prototype of the new Echo-Glasses">
+                        <img class="img-fluid" data-aos="fade-up" data-aos-duration="1000" src="https://m.media-amazon.com/images/I/61Ws48vwaLL.jpg" alt="">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Offcanvas Content -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-success" id="offcanvasExampleLabel">Olie's Virtual Vibes</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Other Products
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <span class="tt" data-bs-placement="bottom" title="Experience crystal-clear sound with wireless headphones and earbuds.">
+                    <li><a class="dropdown-item text-success" href="virtual-glasses.html">Echo-Glasses</a></li>
+                    </span>
+                    <span class="tt" data-bs-placement="bottom" title="Keep your home safe and secure with advanced security solutions.">
+                    <li><a class="dropdown-item text-success" href="smart-security.html">Smart Home Security Systems</a></li>
+                     </span>
+                     <span class="tt" data-bs-placement="bottom" title="Get assistance at your fingertips with AI-powered digital assistant devices.">
+                    <li><a class="dropdown-item text-success" href="#">Digital Assistants</a></li>
+                    </span>
+                    <!-- Add more products as needed -->
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+ 
+<!-- pricing  -->
+<section id="pricing" class="bg-light mt-5">
+<div class="container-lg">
+    <div class="text-center">
+        <h2>PRICING PLANS</h2>
+            <p class="lead text-success" data-aos="fade-up" >CHOOSE A PRICING PLAN TO SUIT YOU</p>
+            
+    </div>
+    
+    <div class="row my-5 align-items-center justify-content-center g-4">
+        <div class="col-8 col-lg-4 col-xl-3" data-aos="fade-up">
+            <div class="card border-0">
+                <div class="card-body text-center py-4">
+                    <h4 class="card-title">
+                        STARTER-EDITION
+                    </h4>
+                    <p class="lead card-subtitle">
+                        Compatible with only mobile
+                    </p>
+                        <p class="display-5 my-4 text-success fw-bold">$500.99</p>
+                       
+                        <a href="#" class="btn btn-outline-success btn-lg mt-3">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- data-aos="fade-up" for scroll animation -->
+        <div class="col-9 col-lg-4" data-aos="fade-up">
+            <div class="card border-success border-2">
+                <div class="card-header text-center py-3">MOST POPULAR</div>
+                <div class="card-body text-center py-4">
+                   
+                        <h4 class="card-title">
+                            ALL-EDITION
+                        </h4>
+                        <p class="lead card-subtitle">
+                            Compatible with all devices
+                        </p>
+                            <p class="display-4 my-4 text-success fw-bold">$1500.99</p>
+                           
+                            <a href="#" class="btn btn-outline-success btn-lg mt-3">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+   
+
+   
+        <div class="col-8 col-lg-4 col-xl-3" data-aos="fade-up">
+            <div class="card">
+                <div class="card-body text-center py-4">
+                    <h4 class="card-title">
+                        PS-EDITION
+                    </h4>
+                    <p class="lead card-subtitle">
+                        Compatible with Playstation
+                    </p>
+                        <p class="display-5 my-4 text-success fw-bold">$700.99</p>
+                        
+                        <a href="#" class="btn btn-outline-success btn-lg mt-3">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+</section>
+<section id="topics">
+    <div class="container-md">
+        <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Features of the Echo-Glasses...</h2>
+            <p class="lead text-success">
+                A quick glance at what you can do
+            </p>
+        </div>
+        <div class="row my-5 g-5 align-items-center">
+            <div class="col-6 col-lg-4">
+                <img src="https://img.fruugo.com/product/5/08/613979085_max.jpg" class="img-fluid" alt="a person with echo">
+            </div>
+            <div class="col-lg-6">
+            <div class="accordion" id="features">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1" >
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                            Intuitive Controls
+                        </button>
+                    </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#features ">
+                        <div class="accordion-body">
+                            Navigate effortlessly through virtual landscapes with easy-to-use controls.
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-2">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapse-2">
+                            Lightweight and Comfortable Design
+                        </button>
+                    </h2>
+                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#features">
+                        <div class="accordion-body">
+                            Enjoy extended wear without discomfort, perfect for extended virtual adventures.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more accordion items as needed -->
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="reviews" class="bg-light">
+    <div class="container-lg">
+        <div class="text-center">
+            <h2>REVIEWS <i class="bi bi-stars"></i></h2>
+            <p class="lead text-success">WHAT THE USERS THINK..?</p>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-8">
+                <div class="list-group">
+                    <div class="list-group-item py-3">
+                        <div class="pb-2" data-aos="fade-down" data-aos-duration="1000">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <h5 class="mb-1">Review 1:</h5>
+                        <p>
+                            "Olie's Virtual Vibes Glasses have transformed my gaming experience entirely! The lightweight design makes them comfortable to wear for hours on end, and the visuals are absolutely stunning. The ease of use and compatibility with various platforms make them a must-have for any gaming enthusiast. Highly recommended!"
+                        </p>
+                        <small>Review by Ishav</small>
+                    </div>
+                    <div class="list-group-item py-3">
+                        <div class="pb-2" data-aos="fade-down" data-aos-duration="1000">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h5 class="mb-1">Review 2:</h5>
+                        <p>
+                            "As someone who spends a lot of time in virtual meetings and conferences, I've found Olie's Virtual Vibes Glasses to be a game-changer. The crystal-clear optics and immersive experience make me feel like I'm in the same room as my colleagues, even when miles apart. Plus, the stylish design doesn't hurt either!"
+                        </p>
+                        <small>Review by Hargun</small>
+                    </div>
+                    <div class="list-group-item py-3">
+                        <div class="pb-2" data-aos="fade-down" data-aos-duration="1000">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h5 class="mb-1">Review 3:</h5>
+                        <p>
+                            "I've tried several VR glasses before, but none compare to Olie's Virtual Vibes. The comfort level is unmatched, and the controls are so intuitive that even my technologically challenged grandma can use them. Whether I'm exploring virtual worlds or watching movies, these glasses never disappoint. Worth every penny!"
+                        </p>
+                        <small>Review by Ekas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="bg-success">
+    <div class="container">
+        <div class="text-center">
+            <h2>Stay Connected with Us!</h2>
+            <p class="lead text-light">Join our community and never miss out on the latest updates, exclusive offers, and exciting events. </p>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-md-8 text-center">
+                <p class="text-warning my-4 fw-bold">
+                    Unlock a world of connection and never miss a beat! Be the first to know about our newest products, special promotions, and community events. Sign up now to join our vibrant community and stay connected with us on this incredible journey. Your inbox is about to get a whole lot more exciting!"
+                </p>
+                <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#mmodal" data-aos="zoom-in">
+
+                    REGISTER FOR UPDATES
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="mmodal" tabindex="1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success" id="modal-title">"Welcome to our Community!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-dark fw-bold">
+                    By joining our community, you'll gain access to:
+                    <ul>
+                        <ul>
+                            <li>Exclusive sneak peeks at upcoming products and releases.</li>
+                            <li>Special discounts and promotions reserved just for our members.</li>
+                            <li>Invitations to virtual events and gatherings where you can connect with like-minded individuals.</li>
+                            <li>Insider updates on industry news and trends.</li>
+                            <li>Exclusive access to our private community forumAnd much more!</li>
+                        </ul>
+                    </ul>
+                </p>
+
+                <p class="text-dark fw-bold">
+
+                    Simply enter your email address below to stay in the loop. We can't wait to connect with you!"
+                </p>
+                <label for="modal-email" class="form-label">Your Email Address:</label>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text">
+                        <i class="bi bi-envelope-fill"></i>
+                    </span>
+                    <input type="email" class="form-control" id="email" placeholder="e.g. olie@example.com">
+                    <!-- tooltip -->
+                    <span class="input-group-text">
+                    <span class="tt" data-bs-placement="bottom" title="Enter your email">
+                        <i class="bi bi-question-circle-fill"></i>
+                    </span>
+                    </span>
+                </div>
+                <div class="mb-4 text-center">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="contact">
+    <div class="container-lg">
+        <div class="text-center">
+            <h2 data-aos="fade-up">GET IN TOUCH</h2>
+            <p class="lead text-success" data-aos="fade-up">Questions to ask? Fill out the form to contact</p>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-6">
+                <form id="contactForm">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="e.g. olie@example.com" required>
+                        <!-- tooltip -->
+                        <span class="input-group-text">
+                            <span class="tt" data-bs-placement="bottom" title="Enter an email we can reply to">
+                                <i class="bi bi-question-circle-fill"></i>
+                            </span>
+                        </span>
+                    </div>
+
+                    <label for="name" class="form-label">Name:</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Olie" required>
+                    </div>
+
+                    <label for="subject" class="form-label">What is your question about?</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="bi bi-chat-right-text-fill"></i></span>
+                        <select id="subject" name="subject" class="form-select" required>
+                            <option value="pricing" selected>Pricing</option>
+                            <option value="software">Software</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-floating mb-4 mt-5">
+                        <textarea id="query" name="query" class="form-control" style="height: 140px;" required></textarea>
+                        <label for="query">Your Query.....</label>
+                    </div>
+                    <div class="mb-4 text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+   
+
+   <script>
+        const tooltips=document.querySelectorAll('.tt');
+        tooltips.forEach(t=>{
+            new bootstrap.Tooltip(t)
+        })
+// for scroll Animation
+        AOS.init();
+    </script>
+
+</body>
+</html>
+
+
